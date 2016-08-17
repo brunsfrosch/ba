@@ -1,0 +1,372 @@
+\documentclass[a4paper,11pt]{scrartcl}%scrbook %[...,twoside]
+
+\usepackage[a4paper,left=3.5cm,right=2.5cm,bottom=3.5cm,top=3cm]{geometry}
+
+\usepackage[ngerman]{babel}
+
+% Caption Packet
+\usepackage[margin=0pt,font=small,labelfont=bf]{caption}
+\usepackage[pdftex]{graphicx,color}
+\usepackage{amsmath,amssymb}
+% Theorem-Umgebungen
+\usepackage[amsmath,thmmarks]{ntheorem}
+\usepackage{algorithm2e}
+% Korrekte Darstellung der Umlaute
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[onehalfspacing]{setspace}
+% Algorithmen
+\usepackage{algorithm}
+\usepackage{algorithmic}
+% Bibtex deutsch
+\usepackage{bibgerm}
+% URLs
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage[]{algorithm2e}
+
+% Theorem-Optionen %
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{satz}[theorem]{Satz}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{korollar}[theorem]{Korollar}
+\newtheorem{proposition}[theorem]{Proposition}
+% Ohne Numerierung
+\theoremstyle{nonumberplain}
+\renewtheorem{theorem*}{Theorem}
+\renewtheorem{satz*}{Satz}
+\renewtheorem{lemma*}{Lemma}
+\renewtheorem{korollar*}{Korollar}
+\renewtheorem{proposition*}{Proposition}
+% Definitionen mit \upshape
+\theorembodyfont{\upshape}
+\theoremstyle{change}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{nonumberplain}
+\renewtheorem{definition*}{Definition}
+% Kursive Schrift
+\theoremheaderfont{\itshape}
+\newtheorem{notation}{Notation}
+\newtheorem{konvention}{Konvention}
+\newtheorem{bezeichnung}{Bezeichnung}
+\theoremsymbol{\ensuremath{\Box}}
+\newtheorem{beweis}{Beweis}
+\theoremsymbol{}
+\theoremstyle{change}
+\theoremheaderfont{\bfseries}
+\newtheorem{bemerkung}[theorem]{Bemerkung}
+\newtheorem{beobachtung}[theorem]{Beobachtung}
+\newtheorem{beispiel}[theorem]{Beispiel}
+\newtheorem{problem}{Problem}
+\theoremstyle{nonumberplain}
+\renewtheorem{bemerkung*}{Bemerkung}
+\renewtheorem{beispiel*}{Beispiel}
+\renewtheorem{problem*}{Problem}
+%
+%% Algorithmen anpassen %
+%\renewcommand{\algorithmicrequire}{\textit{Eingabe:}}
+%\renewcommand{\algorithmicensure}{\textit{Ausgabe:}}
+%\floatname{algorithm}{Algorithmus}
+%\renewcommand{\listalgorithmname}{Algorithmenverzeichnis}
+%\renewcommand{\algorithmiccomment}[1]{\color{grau}{// #1}}
+%
+% Floating-Umgebungen anpassen %
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+% Abkuerzungen richtig formatieren %
+\usepackage{xspace}
+\newcommand{\vgl}{vgl.\@\xspace} 
+\newcommand{\zB}{z.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]B.\@\xspace}
+\newcommand{\bzw}{bzw.\@\xspace}
+\newcommand{\dahe}{d.\nolinebreak[4]\hspace{0.125em}h.\nolinebreak[4]\@\xspace}
+\newcommand{\etc}{etc.\@\xspace}
+\newcommand{\evtl}{evtl.\@\xspace}
+\newcommand{\ggf}{ggf.\@\xspace}
+\newcommand{\bzgl}{bzgl.\@\xspace}
+\newcommand{\so}{s.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]o.\@\xspace}
+\newcommand{\iA}{i.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]A.\@\xspace}
+\newcommand{\sa}{s.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]a.\@\xspace}
+\newcommand{\su}{s.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]u.\@\xspace}
+\newcommand{\ua}{u.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]a.\@\xspace}
+\newcommand{\og}{o.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]g.\@\xspace}
+\newcommand{\oBdA}{o.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]B.\nolinebreak[4]\hspace{0.125em}d.\nolinebreak[4]\hspace{0.125em}A.\@\xspace}
+\newcommand{\OBdA}{O.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]B.\nolinebreak[4]\hspace{0.125em}d.\nolinebreak[4]\hspace{0.125em}A.\@\xspace}
+
+% Leere Seite ohne Seitennummer, naechste Seite rechts
+\newcommand{\blankpage}{
+ \clearpage{\pagestyle{empty}\cleardoublepage}
+}
+\bibliographystyle{unsrt}
+\usepackage{hyperref}
+% Keine einzelnen Zeilen beim Anfang eines Abschnitts (Schusterjungen)
+\clubpenalty = 10000
+% Keine einzelnen Zeilen am Ende eines Abschnitts (Hurenkinder)
+\widowpenalty = 10000 \displaywidowpenalty = 10000
+% EOF
+\titlehead{
+	\begin{minipage}{7.2cm}
+		\vspace{-6mm}
+		\hspace{-4mm}
+	\includegraphics[scale=0.5]{./logo}
+	\end{minipage}
+	\begin{minipage}{7.6cm}
+		\begin{flushright}
+			Fakultät für Informatik\\
+			Lehrstuhl für Algorithm Engineering (LS11)\\
+			http://ls11-www.cs.tu-dortmund.de\\
+		\end{flushright}
+  \end{minipage}
+  \\
+	\centerline{\hrulefill}
+}%end of titlehead
+
+
+\title{\vspace{2,5cm}Textkompression mithilfe einer Variante von LZ78}
+\subtitle{Exposee}
+\author{Florian Kleine\\Matrikelnummer: 157020}
+\publishers{\parbox[b][12cm]{\textwidth}{Betreuer:\\ Prof. Dr. Johannes Fischer\\
+Dominik Köppl}}
+\date{\today}
+
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+\newpage
+\newpage
+\section{Einleitung}
+
+Die Datenkompression spielt in der Informatik eine große Rolle. Zwar sind die Datenträger im Vergleich zu früher um ein Vielfaches größer und vor allem günstiger geworden, stoßen bei den heute anfallenden riesigen Datenmengen aber immer noch an ihre Grenzen. Deshalb ist es sinnvoll die Daten mit geschickten Verfahren so zu komprimieren, dass sie später verlustfrei in den Ursprungszustand zurückübersetzt werden können.
+In dieser Arbeit soll es darum gehen, Texte mithilfe einer Variante des Lempel-Ziv78-Verfahrens in Faktoren zu zerlegen, zu kodieren und so verlustfrei zu komprimieren. Dieses Verfahren stützt sich auf der Eliminierung von Redundanzen, indem Teile des Textes durch Verweise auf vorher auftretende gleiche Teile ersetzt werden. Solche Verweise benötigen weniger Speicher als der Text, was so zu einer Kompression des kompletten Textes führt.
+Das aus dieser Arbeit entstehende Verfahren wird anschließend mit bereits vorhandenen Kompressionsverfahren (z.B. gzip und 7zip) verglichen.\\\\
+
+\section{Entwurf einer Gliederung}
+
+	\begin{itemize}
+		\item Einleitung
+		\item Theoretische Grundlagen
+		\item Entworfene Algorithmen
+		\item Implementierung
+		\item Praktische Tests
+		\item Fazit
+	\end{itemize}
+\newpage	
+\section{Leseprobe}
+	\subsection{Theoretische Grundlagen}
+	
+	Im Folgenden werden Datenstrukturen und Operationen eingeführt, die in dieser Arbeit benötigt werden.\\
+	Sei das Alphabet $\Sigma$ definiert als eine Menge von Zeichen, dann bezeichnet $\Sigma^{*}$ die Menge aller Worte, die aus dem Alphabet gebildet werden können. Jedes dieser Worte bezeichnet man als String.
+	Sei $s$ ein String mit der Länge $n$.
+	
+	\begin{definition}[Länge]
+		Sei $|s|$ die Länge des String $s$, das heißt die Anzahl von Zeichen in $s$.
+	\end{definition}
+	
+	\begin{definition}[Leerstring]
+		Sei $\varepsilon \in \Sigma$* der leere String. Es gilt $|\varepsilon|$ = 0.
+	\end{definition}
+	
+	\begin{definition}[Symbolzugriff]
+		Für $x \in \mathbb{N}$ und $x \leq n$ sei $s[x]$ das $x$-te Zeichen aus $s$.
+	\end{definition}
+	
+	\begin{definition}[Teilstring]
+		Für $x,y \in \mathbb{N}$ und $1 \leq x < y \leq n$ sei $s[x,y]$ die Zeichenfolge vom $x$-ten bis zum $y$-ten Zeichen aus $s$. $s$[x] und $s$[y] einschließlich.
+	\end{definition}
+	
+	\begin{definition}[Suffix]
+		 Für $x \in \mathbb{N}$ und $x \leq n$ sei $s[x..]$ das $x$-te Suffix von $s$. Also gilt $s[x..] = s[x,n]$.
+	\end{definition}
+	
+	\begin{definition}[Suffix-Tree]
+		Ein Suffix-Tree eines Strings $s$ ist ein Baum mit $n$ Blättern. Alle inneren Knoten erfüllen folgende Bedingungen:
+		\begin{itemize}
+			\item Jeder Knoten hat mindestens 2 Kinder.
+			\item Jede Kante ist mit einem nicht-leeren Teilstring von $s$ markiert.
+			\item Die Markierung ausgehender Kanten eines Knotens beginnen nicht mit dem gleichen Zeichen.
+			\item Die Konkatenation von allen Zeichen auf dem Pfad von der Wurzel zum Blatt $i$ ist das $i$-te Suffix $s[i..]$ von $s$.
+		\end{itemize}
+		\begin{beispiel}[Suffix-Tree]
+			$s$ = \texttt{ananas\$}
+			\begin{figure}
+				\centering
+				  \includegraphics[scale=0.8]{./ananas_suffixTree}
+				  \cite{suffixtreeurl}
+				  \caption{Diese Abbildung zeigt den Suffix-Tree zu $s$ = \texttt{ananas\$}. Die Blätter sind hierbei nummeriert. Der String auf dem Pfad von der Wurzel zum Blatt $i$ repräsentiert das Suffix $s[i..]$. }
+			\end{figure}
+		\end{beispiel}
+		
+	\end{definition}
+	\newpage
+	\subsection{Idee der LZ78 Variante}
+	\subsubsection{LZ78}
+	LZ78 wurde 1978 von Jacob Ziv und Abraham Lempel erfunden und ist ein Verfahren zur Datenkompression. Der (naive) Algorithmus durchläuft den String bzw. den Text $T$ und ersetzt Redundanzen durch Verweise auf das längste vorherige Vorkommen des selben Teils und hängt das nächste Zeichen an diesen Verweis an. Dadurch wird ein Baum erzeugt, der sog. LZ78-Trie. Dieses Verfahren wird nun am Beispiel von $T$ = \texttt{ananas\$} verdeutlicht.\ref{fig:lz78}
+	\begin{figure}[h]
+	\begin{tabular}[t]{cc}
+		\begin{tabular}[b]{l c c c c c}\hline
+			& 1 & 2 & 3 & 4 & 5 \\ \hline
+		   Textteil & \texttt{a} & \texttt{n} & \texttt{an} & \texttt{as} & \texttt{\$}\\ \hline
+		   Faktorzerlegung & (-,\texttt{a}) & (-,\texttt{n}) & (1,\texttt{n}) & (1,\texttt{s}) &  (-,\texttt{\$})\\ \hline
+		\end{tabular} & \includegraphics{ananas_LZ78Tree}
+	\end{tabular}
+	\caption{Links sieht man die Faktorisierung nach LZ78 und rechts den entsprechenden LZ78-Tree. Der $i$-te Faktor $(x,s)$ wird zu einem neuen Knoten $i$ mit $x$ als Elternknoten und die Kante $(x,i)$ wird mit $s$ beschriftet.}
+	\label{fig:lz78}
+	\end{figure}
+	
+	Ein \textit{Faktor} ist ein Tupel $(x,s)$ mit $x \in \{1..n\} \cup \{-\}$ und $s \in \Sigma$. $x$ bezeichnet hierbei den Elternknoten im LZ78-Tree und $s$ die Kantenbeschriftung der Kante von $x$ zum neu entstehenden Knoten. Die Zahlen in den Knoten stehen für die Faktoren. \cite[8-10]{ciss}
+	
+	\subsubsection{LZ78 Variante}
+	Im Gegensatz zu LZ78 kann diese Variante (im Folgenden LZ78V genannt) auch mehr Zeichen an eine Ersetzung anhängen.
+	Im Beispieltext $T$ = \texttt{ananas\$} folgt nach einem \texttt{'n'} immer ein \texttt{'a'}. Dies spiegelt sich im Suffix-Tree durch die Kantenbeschriftung \texttt{'na'} wider. Mit LZ78V können wir nun beim ersten Lesen von \texttt{'n'} den Faktor (-,\texttt{na}) erstellen, denn nach \texttt{'n'} kann nichts anderes kommen. Es ergibt sich folgende Faktorzerlegung:\\
+	\begin{figure}[h]
+	\begin{tabular}[t]{c c c}
+		\begin{tabular}[b]{l c c c}\hline
+			& 1 & 2 & 3  \\ \hline
+  		Textteil & \texttt{a} & \texttt{na} & \texttt{nas\$} \\ \hline
+  		Faktorzerlegung & (-,\texttt{a}) & (-,\texttt{na}) & (2,\texttt{s\$}) \\ \hline
+		\end{tabular} & \hspace{2cm} & \includegraphics{ananas_LZ78VTree}\\\\
+	\end{tabular}
+	\caption{Links sieht man die Faktorisierung nach LZ78V und rechts den entsprechenden LZ78V-Tree. Der $i$-te Faktor $(x,s)$ wird zu einem neuen Knoten $i$ mit $x$ als Elternknoten und die Kante $(x,i)$ wird mit $s$ beschriftet. Im Gegensatz zum LZ78-Tree kann $s$ aber nun mehr als ein Zeichen beinhalten.}
+	\label{fig:lz78v}
+	\end{figure}
+	
+	Den LZ78V-Tree können wir mit einem zweidimensionalen Array $A$ implementieren. So wäre $A[i][1] = x$ und $A[i][2] = s$ der $i$-te Faktor $(x,s)$ in der Array-Darstellung. Im Beispiel $T$ = \texttt{ananas\$} ergibt sich:\\\\
+	\begin{tabular}[b]{l c c c}
+						\hline
+							& 1 & 2 & 3 \\\hline
+						$A[1]$ & - & - & 2 \\\hline
+						$A[2]$	& \texttt{a} & \texttt{na} & \texttt{s\$}\\\hline
+						
+			
+	\end{tabular}
+	
+	
+	
+	
+	
+	
+	Gehen wir jedoch strikt nach diesem Verfahren vor, kann es aber auch zu einer schlechteren Faktorisierung kommen. Schlecht definieren wir hier über die Gesamtanzahl der Buchstaben in der Faktorisierung. Je mehr Buchstaben, desto schlechter ist die Faktorisierung.  Beispielweise beim Text $T$ = \texttt{abrakabrabra\$} würde LZ78V den Text in 3 Faktoren zerlegen: (-,\texttt{a})(-,\texttt{bra})(-,\texttt{kabrabra}) mit insgesamt 12 Buchstaben.\\
+	Dies entsteht dadurch, dass sobald man ein \texttt{'k'} liest, die restlichen Zeichen eindeutig durch den Suffix-Tree bestimmt werden können und somit zu einem Faktor zusammengefasst werden. In dieser Arbeit soll hierfür eine Lösung gefunden werden. Es wäre zum Beispiel denkbar, $(x,s)$ mit $x \in \{1...n\} \cup \{-\}$ und $s \in \Sigma^{+}$ nur in die Faktorisierung aufzunehmen, wenn $s$ mindestens zweimal im Text vorkommt. Dazu müssten wir sicherstellen, dass $s$ ein innerer Knoten des Suffix-Tree ist. Ansonsten nehmen wir nur das erste Zeichen von $s$.\\ Am Beispiel $T$ = \texttt{abrakabrabra\$} ergibt sich dann:\\
+	(-,\texttt{a})(-,\texttt{bra})(-,\texttt{k})(1,\texttt{bra})(2,\texttt{\$}) mit insgesamt 9 Buchstaben.
+
+	
+	\subsection{Idee des Algorithmus}
+	
+		\begin{algorithm}[H]
+		\caption{factorize($T$)}
+		\SetAlgoLined
+		ST = construct\_ST($T$)\\
+		U = bit\_vector(ST.size(), 0)\\
+		F = int\_vector(0, 0, $\lfloor\log ST.size()\rfloor + 1$)\\
+		current\_node = ST.root()\\
+		i = 0
+		
+		
+		\end{algorithm}
+	
+	
+		Um einen Text $T$, wie oben verdeutlicht, in Faktoren zu zerlegen, konstruieren wir uns zuerst den Suffix-Tree. Hierzu wird die C++ Bibliothek \textit{sdsl} verwendet. Mit Hilfe dieser Bibliothek lassen sich sog. \textit{Compressed Suffix Trees} (CST) leicht aus Texten erzeugen. Außerdem besitzt jeder Knoten im CST eine eindeutige ID aus dem Bereich 0 bis $n-1$, wenn $n$ die Anzahl der Knoten im CST ist. Eine Eigenschaft, die man sich hier zunutze machen kann. Nachdem man den CST erstellt hat, erzeugt man wieder mit Hilfe von \textit{sdsl} einen Bit-Vektor $U$ mit $n$ Einträgen und initialisiert ihn mit 0. Der Vektor $U$ speichert für jeden Knoten $v$ mit der ID $i$, ob er schon als Faktor benutzt wird. Also falls dieser Knoten $v$ bereits als Faktor benutzt wird, ist U[$i$] = 1. Man setzt U[id(root())] = 1, da die Wurzel nie als Faktor verwendet wird. Außerdem erzeugt man sich mit Hilfe von \textit{sdsl} einen sog. \textit{int\_vector} $F$, der für jeden Eintrag $\lfloor\log n\rfloor + 1$ Bits belegt.
+		Nun beginnt man den Text zu lesen. Der aktuelle Knoten $v$ im CST ist die Wurzel. Anhand des ersten Zeichens von $T$ kann man bestimmen, welche Kante man nehmen muss und aktualisiert $v$ mit dem entsprechenden Knoten. Außerdem setzt man die aktuelle Textposition um so viele Zeichen weiter wie an der Kante zu $v$ stehen. Ist $v$ ein Blatt im CST, setzt man \\U[id($v$)] = 1 und hängt id($v$) an das Ende von $F$. Man kann die Faktorisierung beenden, da der Text zu Ende ist. Ist $v$ kein Blatt, testet man U[id($v$)] != 0. Falls das zutrifft, sucht man sich anhand des nächsten Zeichens den nächsten Knoten und verfährt dort analog. Falls das nicht zutrifft, setzt man U[id($v$)] = 1 und hängt id($v$) an das Ende von $F$ und beginnt mit dem nächsten Zeichen des Textes von vorn. 
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale=0.8]{ananas_suffixTree_inorder}
+			\caption{Diese Abbildung zeigt nocheinmal den Suffix-Tree zu $T$ = \texttt{ananas\$}. Die roten Zahlen an den Knoten ist eine Pre-Order-Nummerierung und stellt beispielhaft die IDs der Knoten dar.}
+			\label{fig:st_inorder}
+		\end{figure}
+		\\Im Beispiel von $T$ = \texttt{ananas\$} und den IDs aus Abbildung \ref{fig:st_inorder}  ergibt sich: \\
+		$U$ = [1,0,1,0,0,0,0,1,0,1,0] und $F$ = [2,7,9].\\
+		
+		Der beschriebene Algorithmus hat lineare Laufzeit. Im Folgenden sei $n$ die Länge des Textes $T$, $x$ die Anzahl der Knoten im CST und $y$ die Anzahl der Faktoren in $F$.
+		Der Speicherbedarf zur Laufzeit beträgt 3$n$ + o($n$) + $\arrowvert$CSA$\arrowvert$ + $\arrowvert$LCP$\arrowvert$ Bits für den CST\cite{cheetsheet}, $x$ Bits für den Bit-Vektor $U$ und $y * (\lfloor\log(x)\rfloor+1)$ Bits für $F$. \\Also insgesamt 3$n$ + o($n$) + $\arrowvert$CSA$\arrowvert$ + $\arrowvert$LCP$\arrowvert$ + $x$ + $y$ * $\lfloor\log$ $x\rfloor$ + $y$ Bits.\\
+		Um die Tabelle $A$ nun mit Faktoren zu füllen, erstellt man sich mit \textit{sdsl} einen int\_vector $N$ mit $m$ Einträgen, wenn $m$ die größte ID in $F$ ist und initialisiert ihn mit 0. Jeder Eintrag belegt $\lfloor \log z\rfloor + 1$ Bits, also insgesamt belegt der Vektor $N$ $m * \lfloor \log z\rfloor + m$ Bits. Dieser Vektor soll für jede ID aus $F$ speichern, den wievielten Faktor der entsprechende Knoten repräsentiert. $N$ lässt sich in linearer Zeit mit $F$ füllen. Dafür läuft man $F$ einmal von links nach rechts durch und für jeden Eintrag in $F$ an der Position $j$ setzt man $N[F[j]] = j + 1$. Den Speicher des Vektors $U$ kann man sogar schon vor dem Erstellen von $N$ freigeben, den Speicher von $F$ erst nach dem Befüllen von $N$. Nun lässt sich mithilfe von $N$ und dem CST die Tabelle $A$ in linearer Zeit füllen. Denn wird ein Knoten des CST mit der ID $i$ als $k$-ter Faktor benutzt, so ist $N[i]=k$. Man erstellt in $A$ für jeden Eintrag in $N$, der ungleich 0 ist, an der in $N$ angegeben Stelle einen Eintrag, der auf $N[p]$ verweist, wenn $p$ die ID des Vaterknotens des entsprechenden Knoten ist, und den Text enthält, der an der Kante zu diesem Knoten steht. Im Beispiel von $T$ = \texttt{ananas\$} ist $N$ = [0,0,1,0,0,0,0,2,0,3].
+		
+		Eine Alternative zu dem oben beschriebenen Algorithmus ist, dass man sich während der Faktorisierung den LZ78V-Tree aufbaut. Hierzu erstellt man sich einen  Baum $B$, der nur die Wurzel als Knoten enthält. Ein Knoten enthält ein Tupel ($a ,b$), wobei $a$ die ID des Knotens ist und angibt, als wievielter dieser Knoten hinzugefügt wurde und $b$ die entsprechende ID im CST. Außerdem enthält jeder Knoten eine Menge von Pointern auf die Kindknoten. Während man wie oben beschrieben anhand der gelesenen Zeichen den CST durchläuft, versucht man den gleichen Pfad auch in $B$ zu gehen. Kommt man an den Punkt, wo dies in $B$ nicht möglich ist, erstellt man sich den entsprechenden Knoten in $B$ und beginnt in beiden Bäumen mit dem nächsten Zeichen von vorn. Ist man im CST an einem Blattknoten angelangt, kann man die Faktorisierung beenden, da der Text zu Ende ist. So ergibt sich im Beispiel $T$ = \texttt{ananas\$} der Baum aus Abbildung \ref{fig:ausschnitt}. 
+				\begin{figure}[h]
+					\centering
+					\includegraphics[scale=0.8]{ananas_LZ78VTree(ausschnitt)}
+					\caption{Dies ist der Baum $B$ zu $T$ = \texttt{ananas\$} nach der Faktorisierung unter Berücksichtigung der IDs aus Abbildung \ref{fig:st_inorder}.}
+					\label{fig:ausschnitt}
+				\end{figure}Diese Alternative ist besonders gut, wenn die Anzahl $z$ der Faktoren klein ist. Denn der Speicherbedarf des Baums beträgt $z * (\lfloor\log n\rfloor + \lfloor\log z\rfloor + 2)$ Bits und die Laufzeit ist linear. Hinzu kommt noch der Speicherbedarf des CST.
+		Mit $B$ und dem CST kann man auch in linearer Zeit die Tabelle $A$ füllen. Man durchläuft den Baum und für jeden Knoten außer der Wurzel mit dem Tupel $(a, b)$ erstellt man in $A$ an der Position $a$ einen Eintrag der auf die ID des Elternknotens in $B$ verweist und den Text enthält, der im CST an der Kante zum Knoten mit der ID $b$ steht.
+		
+		
+		
+		
+	\begin{comment}	
+	\subsection{Pseudocode}	
+	\begin{algorithm}[H]
+		\KwData{Text $T$}
+		\KwResult{Faktorisierung von $T$ nach LZ78V}
+		\tcp{hierzu wird die Bibliothek sdsl-lite verwendet}
+		cst $\leftarrow$ construct\_suffix\_tree($T$)\;
+		root\_factor $\leftarrow$ factor(0,`` ``)\;
+		factors.push(root\_factor)\;
+		i $\leftarrow$ 0\;
+		\While{i < T.size()}{
+			\tcp{best\_factor referenziert den länsgsten Text, der auch Prefix von T[i..] ist, Laufzeit = O(factors.size())}
+			best\_factor $\leftarrow$ find\_best\_factor(factors)\;
+			\tcp{Knoten im Suffix-Tree der den gleichen Text referenziert}
+			node $\leftarrow$ navigate\_to\_node(cst, best\_factor.text)\;
+			\tcp{suche anhand des nachfolgenden Zeichens im Text den nächsten Knoten im Suffix-Tree}
+			next\_node $\leftarrow$ cst.child(node, T[i+best\_factor.text.size()])\;
+			\eIf{next\_node.is\_leaf()} {
+				current\_factor\_text $\leftarrow$ first\_char\_of\_edge(cst, next\_node)\;
+			}{
+				current\_factor\_text $\leftarrow$ text\_of\_edge(cst, next\_node)\;
+			}
+			factors.push(new\_factor(best\_factor, current\_factor\_text))\;
+			i += best\_factor.text.size() + current\_factor\_text.size()\;	
+		} 
+	\end{algorithm}
+	\end{comment}
+	
+	\subsection{Mögliche Kodierung}
+	
+	Eine Möglichkeit die Tabelle $A$ zu kodieren wäre die Huffman Kodierung. Diese Kodierung ordnet jedem Symbol einen präfixfreien Code zu. Dazu werden die Symbole nach der Häufigkeit ihres Auftretens geordnet und man erstellt für jedes Symbol einen Knoten, der die Häufigkeit des Auftretens enthält. Nun fügt man zwei Knoten (bzw. Teilbäume) zu einem neuen Teilbaum zusammen. Die Wurzel enthält dabei die Summe der beiden Häufigkeiten der Teilbäume. Dies wird solange wiederholt, bis nur noch ein Baum übrig ist. Für jedes Symbol kann man nun auf dem Pfad von der Wurzel zum Blattknoten(Blätter enthalten die Symbole) einen Code ablesen: 0 für das linke Kind und 1 für das rechte Kind. \\
+	In der Kodierung der Tabelle $A$ muss man noch zwischen Verweisen und Text unterscheiden. Daher sind die Verweise mit einen * markiert. So ergibt sich beim Beispiel $T = \texttt{ananas\$}$ der zu kodierende Text: \texttt{$0^*a0^*na2^*s\$$}.
+	\begin{figure}[h]
+			\centering
+			\includegraphics[scale=0.8]{huffmanTree}
+			\caption{Diese Abbildung zeigt einen möglichen Huffman-Tree zum Text \texttt{$0^*a0^*na2^*s\$$}. Der Code für jedes Symbol ist der String auf dem Pfad bis zum Blatt des Symbols.}
+			\label{fig:huffman}
+	\end{figure}
+	\\Mit dem Huffman-Tree aus Abbildung \ref{fig:huffman}  ergibt sich folgende Kodierung für $T$ = \texttt{ananas\$}:
+	00010010001101110111.
+	Diese Art der Kodierung hat den Vorteil, dass Symbole, die häufig vorkommen, einen kürzeren Code bekommen als Symbole mit niedriger Häufigkeit.
+	
+	
+	\section{Ziele der Arbeit}
+	
+	In dieser Arbeit soll eine Variante des LZ78-Verfahrens entwickelt und in C++, unter der Verwendung der C++ Bibliothek \textit{sdsl}, implementiert werden. Dieses soll Texte und Dateien besser komprimieren als LZ78. Außerdem soll ein gutes Verfahren gefunden oder selbst entwickelt werden, um die Faktorisierung nach dieser LZ78-Variante zu kodieren. Denn nur so lässt sich diese Kompression mit Kompressionen anderer Verfahren, wie z.B. gzip oder 7zip, vergleichen. Kriterien für den Vergleich sind die relative Anzahl von Bits der Ausgabe und die Geschwindigkeit beim Komprimieren bzw. Dekomprimieren. Testdaten entnehme ich hierbei aus \cite{textcollection}. Enthalten sind Source-Code in C und Java, Proteinsequenzen, DNA, englische Texte und XML-Dateien mit verschiedenen Alphabetgrößen. 
+	\newpage
+	\section{Zeitplan}
+	\textbf{\underline{Meilensteine:}}
+	\begin{itemize}
+		\item bis März: \begin{itemize}
+		\item Theoretische Grundlagen zu großen Teilen fertig (bei Bedarf später ergänzen)
+		\item Programmbibliotheken festlegen
+		\end{itemize}
+			\item Mitte März: Algorithmus implementiert
+			\item ab April: 
+		\begin{itemize}
+			\item Optimierung von Speicherbedarf und Geschwindigkeit
+			\item Mit anderen Kompressionsverfahren vergleichen und Ergebnisse dokumentieren
+		\end{itemize}
+	\end{itemize}	
+	Außerdem finden nach Absprache alle 2 Wochen Treffen mit dem Betreuer statt um eventuell auftretende Fragen zu klären und den aktuellen Stand der Abschlussarbeit sicherzustellen.
+	
+	
+	
+	\newpage
+	\nocite{*}
+	\bibliography{bibs}
+
+	
+	
+
+\end{document}

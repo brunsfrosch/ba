@@ -1,0 +1,70 @@
+\begin{thebibliography}{10}
+
+\bibitem{suffixtreeurl}
+Visualisierung von {S}uffix - {T}rees.
+\newblock \url{http://visualgo.net/suffixtree.html}.\\
+\newblock abgerufen am: 10.12.2015.
+
+\bibitem{ciss}
+Dominik~Köppl Johannes~Fischer, Tomohiro~I.
+\newblock Lempel Ziv Computation in Small Space(LZ-CISS).
+\newblock {\em Combinatorial Pattern Matching}, Seiten 172--184, 2015.
+
+\bibitem{cheetsheet}
+Simon Gog.
+\newblock sdsl cheet sheet.\\
+\newblock \url{http://simongog.github.io/assets/data/sdsl-cheatsheet.pdf}\\abgerufen am: 31.01.2016.
+
+\bibitem{DBLP:conf/dcc/Horspool91}
+R.~Nigel Horspool.
+\newblock Improving {LZW}.
+\newblock In {\em Proceedings of the {IEEE} Data Compression Conference, {DCC}
+  1991, Snowbird, Utah, April 8-11, 1991.}, Seiten 332--341, 1991.
+
+
+\bibitem{}
+Mamta Sharma.
+\newblock Compression using huffman coding.
+\newblock {\em IJCSNS International Journal of Computer Science and Network
+  Security}, 10:133--141, 2010.
+
+\bibitem{DBLP:journals/corr/NakashimaIIBT15}
+Yuto Nakashima, Tomohiro I, Shunsuke Inenaga, Hideo Bannai, and Masayuki
+  Takeda.
+\newblock Constructing {LZ78} tries and position heaps in linear time for large
+  alphabets.
+\newblock {\em CoRR}, abs/1501.06619, 2015.
+
+\bibitem{DBLP:journals/corr/KopplS15}
+Dominik Köppl and Kunihiko Sadakane.
+\newblock Lempel Ziv Computation in Compressed Space (LZ-CICS).
+\newblock {\em CoRR}, abs/1510.02882, 2015.
+
+\bibitem{Ko:2007:STS:1354359}
+Pang Ko.
+\newblock {\em Suffix Trees and Suffix Arrays in Primary and Secondary
+  Storage}.
+\newblock PhD thesis, Ames, IA, USA, 2007.
+\newblock AAI3274885.
+
+\bibitem{DBLP:journals/corr/abs-1211-3642}
+Keisuke Goto and Hideo Bannai.
+\newblock Simpler and faster lempel ziv factorization.
+\newblock {\em CoRR}, abs/1211.3642, 2012.
+
+\bibitem{gog}
+Simon Gog.
+\newblock Text indexing: Lecture 2. Lecture notes\\
+\newblock \url{http://algo2.iti.kit.edu/gog/2_text_indexing.pdf} abgerufen am: 24.01.2016.
+
+\bibitem{citeulike:8318569}
+Guy Blelloch.
+\newblock Introduction to data compression.
+\newblock Lecture notes.\\
+\newblock \url{https://www.cs.cmu.edu/~guyb/realworld/compression.pdf}\\
+\newblock abgerufen am: 24.01.2016
+
+\bibitem{textcollection}
+P. Ferragina and G. Navarro. Pizza \& chili corpus - compressed indexes and their testbeds.
+\newblock \url{http://pizzachili.dcc.uchile.cl/texts.html} Letztes Update: September, 2005\\
+\end{thebibliography}

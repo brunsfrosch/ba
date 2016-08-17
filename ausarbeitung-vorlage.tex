@@ -1,0 +1,190 @@
+\documentclass[a4paper,11pt]{scrartcl}%scrbook %[...,twoside]
+
+\usepackage[a4paper,left=3.5cm,right=2.5cm,bottom=3.5cm,top=3cm]{geometry}
+
+\usepackage[ngerman]{babel}
+
+% Caption Packet
+\usepackage[margin=0pt,font=small,labelfont=bf]{caption}
+% Gliederung einstellen
+%\setcounter{secnumdepth}{5}
+%\setcounter{tocdepth}{5}
+%\usepackage[Sonny]{fncychap}
+%\ChTitleVar{\huge\rm}
+\usepackage[pdftex]{graphicx,color}
+\usepackage{amsmath,amssymb}
+
+% Theorem-Umgebungen
+\usepackage[amsmath,thmmarks]{ntheorem}
+
+% Korrekte Darstellung der Umlaute
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[onehalfspacing]{setspace}
+% Algorithmen
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+% Bibtex deutsch
+\usepackage{bibgerm}
+% URLs
+\usepackage{url}
+
+% Theorem-Optionen %
+\theoremseparator{.}
+\theoremstyle{change}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{satz}[theorem]{Satz}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{korollar}[theorem]{Korollar}
+\newtheorem{proposition}[theorem]{Proposition}
+% Ohne Numerierung
+\theoremstyle{nonumberplain}
+\renewtheorem{theorem*}{Theorem}
+\renewtheorem{satz*}{Satz}
+\renewtheorem{lemma*}{Lemma}
+\renewtheorem{korollar*}{Korollar}
+\renewtheorem{proposition*}{Proposition}
+% Definitionen mit \upshape
+\theorembodyfont{\upshape}
+\theoremstyle{change}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{nonumberplain}
+\renewtheorem{definition*}{Definition}
+% Kursive Schrift
+\theoremheaderfont{\itshape}
+\newtheorem{notation}{Notation}
+\newtheorem{konvention}{Konvention}
+\newtheorem{bezeichnung}{Bezeichnung}
+\theoremsymbol{\ensuremath{\Box}}
+\newtheorem{beweis}{Beweis}
+\theoremsymbol{}
+\theoremstyle{change}
+\theoremheaderfont{\bfseries}
+\newtheorem{bemerkung}[theorem]{Bemerkung}
+\newtheorem{beobachtung}[theorem]{Beobachtung}
+\newtheorem{beispiel}[theorem]{Beispiel}
+\newtheorem{problem}{Problem}
+\theoremstyle{nonumberplain}
+\renewtheorem{bemerkung*}{Bemerkung}
+\renewtheorem{beispiel*}{Beispiel}
+\renewtheorem{problem*}{Problem}
+%
+%% Algorithmen anpassen %
+%\renewcommand{\algorithmicrequire}{\textit{Eingabe:}}
+%\renewcommand{\algorithmicensure}{\textit{Ausgabe:}}
+%\floatname{algorithm}{Algorithmus}
+%\renewcommand{\listalgorithmname}{Algorithmenverzeichnis}
+%\renewcommand{\algorithmiccomment}[1]{\color{grau}{// #1}}
+%
+% Floating-Umgebungen anpassen %
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+% Abkuerzungen richtig formatieren %
+\usepackage{xspace}
+\newcommand{\vgl}{vgl.\@\xspace} 
+\newcommand{\zB}{z.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]B.\@\xspace}
+\newcommand{\bzw}{bzw.\@\xspace}
+\newcommand{\dahe}{d.\nolinebreak[4]\hspace{0.125em}h.\nolinebreak[4]\@\xspace}
+\newcommand{\etc}{etc.\@\xspace}
+\newcommand{\evtl}{evtl.\@\xspace}
+\newcommand{\ggf}{ggf.\@\xspace}
+\newcommand{\bzgl}{bzgl.\@\xspace}
+\newcommand{\so}{s.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]o.\@\xspace}
+\newcommand{\iA}{i.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]A.\@\xspace}
+\newcommand{\sa}{s.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]a.\@\xspace}
+\newcommand{\su}{s.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]u.\@\xspace}
+\newcommand{\ua}{u.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]a.\@\xspace}
+\newcommand{\og}{o.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]g.\@\xspace}
+\newcommand{\oBdA}{o.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]B.\nolinebreak[4]\hspace{0.125em}d.\nolinebreak[4]\hspace{0.125em}A.\@\xspace}
+\newcommand{\OBdA}{O.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]B.\nolinebreak[4]\hspace{0.125em}d.\nolinebreak[4]\hspace{0.125em}A.\@\xspace}
+
+% Leere Seite ohne Seitennummer, naechste Seite rechts
+\newcommand{\blankpage}{
+ \clearpage{\pagestyle{empty}\cleardoublepage}
+}
+
+\usepackage{hyperref}
+% Keine einzelnen Zeilen beim Anfang eines Abschnitts (Schusterjungen)
+\clubpenalty = 10000
+% Keine einzelnen Zeilen am Ende eines Abschnitts (Hurenkinder)
+\widowpenalty = 10000 \displaywidowpenalty = 10000
+% EOF
+\titlehead{
+	\begin{minipage}{7.2cm}
+		\vspace{-6mm}
+		\hspace{-4mm}
+	\includegraphics[scale=0.5]{./logo}
+	\end{minipage}
+	\begin{minipage}{7.6cm}
+		\begin{flushright}
+			Fakultät für Informatik\\
+			Lehrstuhl für Algorithm Engineering (LS11)\\
+			http://ls11-www.cs.tu-dortmund.de\\
+		\end{flushright}
+  \end{minipage}
+  \\
+	\centerline{\hrulefill}
+}%end of titlehead
+
+
+\title{\vspace{3cm}Textkompression mithilfe einer Variante von LZ78}
+\subtitle{Exposee}
+\author{Florian Kleine}
+\publishers{\parbox[b][12cm]{\textwidth}{Betreuer:\\ Prof. Dr. Johannes Fischer\\
+Dominik Köppl}}
+\date{\today}
+
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\newpage
+\section{Einleitung}
+
+Die Datenkompression spielt in der Informatik immer noch eine große Rolle. Zwar sind die Datenträger im Vergleich zu früher um ein Vielfaches günstiger geworden, stoßen bei den heute anfallenden riesigen Datenmengen aber immer noch an ihre Grenzen. Deshalb ist es sinnvoll die Daten mit geschickten Verfahren so zu komprimieren, dass sie später verlustfrei in den Ursprungszustand zurückübersetzt werden können.
+In dieser Arbeit soll es darum gehen Texte mithilfe einer Variante des Lempel-Ziv78-Verfahren verlustfrei zu komprimieren. Dieses Verfahren stützt sich auf der Eliminierung von Redundanzen, indem Teile des Textes durch Verweise auf vorher auftretende gleiche Teile ersetzt werden. Solche Verweise benötigen weniger Speicher als der Text, was so zu einer Kompression des kompletten Textes führt.
+Das aus dieser Arbeit entstehende Verfahren wird anschließend mit bereits vorhandenen Kompressionsverfahren (z.B. LZ77 und LZ78) verglichen.\\\\
+
+\section{Entwurf einer Gliederung}
+
+	\begin{itemize}
+		\item Einleitung
+		\item Theoretische Grundlagen
+		\item Entworfene Algorithmen
+		\item Implementierung
+		\item Praktische Tests
+		\item Fazit
+	\end{itemize}
+\newpage	
+\section{Leseprobe}
+	\subsection{Theoretische Grundlagen}
+	
+	Im Folgenden werden Datenstrukturen und Operationen eingeführt, die in dieser Arbeit benötigt werden.\\
+	Sei das Alphabet $\Sigma$ definiert als eine Menge von Zeichen, dann bezeichnet $\Sigma$* die Menge aller Worte, die aus dem Alphabet gebildet werden können. Jedes s $\in \Sigma$ bezeichnet man als String. 
+	
+	\begin{definition}[Länge]
+		test
+	\end{definition}
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+% Literaturverzeichnis
+%\bibliographystyle{geralpha}
+%\bibliography{bibdatei}
+
+\end{document}
