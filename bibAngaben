@@ -1,0 +1,23 @@
+% This file was created with JabRef 2.10b2.
+% Encoding: UTF8
+
+
+@Book{storerDataCompression,
+  Title                    = {Data Compression: Methods and Theory},
+  Author                   = {Storer, James A.},
+  Publisher                = {Computer Science Press, Inc.},
+  Year                     = {1988},
+
+  Address                  = {New York, NY, USA},
+
+  ISBN                     = {0-7167-8156-5}
+}
+
+@Misc{,
+  Title                    = {Visualisierung von Suffix - Trees},
+  HowPublished             = {http://visualgo.net/suffixtree.html},
+
+  Owner                    = {flo},
+  Timestamp                = {2016.08.23}
+}
+

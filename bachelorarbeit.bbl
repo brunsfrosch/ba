@@ -1,0 +1,31 @@
+\begin{thebibliography}{1}
+
+\bibitem{bellTextCompression}
+Timothy~C. Bell, John~G. Cleary, and Ian~H. Witten.
+\newblock {\em Text Compression}.
+\newblock Prentice-Hall, Inc., Upper Saddle River, NJ, USA, 1990.
+
+\bibitem{klappentelegraph}
+Bild von einem {K}lappentelegraphen.
+\newblock
+  https://cms.sachsen.schule/typoecke2/typo-experimente/informationuebertragung-mit-dem-klappentelegraph/was-ist-ein-klappentelegraph/.
+\newblock abgerufen am: 24.08.2016.
+
+\bibitem{braille}
+Braille-{A}phabeth.
+\newblock
+  http://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/.
+\newblock abgerufen am: 24.08.2016.
+
+\bibitem{suffixtreeurl}
+Visualisierung von {S}uffix - {T}rees.
+\newblock http://visualgo.net/suffixtree.html.
+\newblock abgerufen am: 01.08.2016.
+
+\bibitem{managingGigabytes}
+Ian~H. Witten, Alistair Moffat, and Timothy~C. Bell.
+\newblock {\em Managing Gigabytes: Compressing and Indexing Documents and
+  Images}.
+\newblock Van Nostrand Reinhold, New York, NY, USA, 1994.
+
+\end{thebibliography}
