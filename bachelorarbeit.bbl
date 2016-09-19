@@ -22,10 +22,15 @@ Visualisierung von {S}uffix - {T}rees.
 \newblock http://visualgo.net/suffixtree.html.
 \newblock abgerufen am: 01.08.2016.
 
-\bibitem{managingGigabytes}
-Ian~H. Witten, Alistair Moffat, and Timothy~C. Bell.
-\newblock {\em Managing Gigabytes: Compressing and Indexing Documents and
-  Images}.
-\newblock Van Nostrand Reinhold, New York, NY, USA, 1994.
+\bibitem{introductionToAlgorithms}
+Thomas~H. Cormen, Charles~E. Leiserson, Ronald~L. Rivest, and Clifford Stein.
+\newblock {\em Introduction to Algorithms, Third Edition}.
+\newblock The MIT Press, 3rd edition, 2009.
+
+\bibitem{sdsl}
+Simon Gog, Timo Beller, Alistair Moffat, and Matthias Petri.
+\newblock From theory to practice: Plug and play with succinct data structures.
+\newblock In {\em 13th International Symposium on Experimental Algorithms, (SEA
+  2014)}, pages 326--337, 2014.
 
 \end{thebibliography}

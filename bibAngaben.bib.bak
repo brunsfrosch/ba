@@ -13,6 +13,16 @@
   ISBN                     = {0-13-911991-4}
 }
 
+@Book{introductionToAlgorithms,
+  Title                    = {Introduction to Algorithms, Third Edition},
+  Author                   = {Cormen, Thomas H. and Leiserson, Charles E. and Rivest, Ronald L. and Stein, Clifford},
+  Publisher                = {The MIT Press},
+  Year                     = {2009},
+  Edition                  = {3rd},
+
+  ISBN                     = {0262033844, 9780262033848}
+}
+
 @Book{storerDataCompression,
   Title                    = {Data Compression: Methods and Theory},
   Author                   = {Storer, James A.},
@@ -22,6 +32,18 @@
   Address                  = {New York, NY, USA},
 
   ISBN                     = {0-7167-8156-5}
+}
+
+@Book{managingGigabytes,
+  Title                    = {Managing Gigabytes: Compressing and Indexing Documents and Images},
+  Author                   = {Witten, Ian H. and Moffat, Alistair and Bell, Timothy C.},
+  Publisher                = {Van Nostrand Reinhold},
+  Year                     = {1994},
+
+  Address                  = {New York, NY, USA},
+
+  Owner                    = {flo},
+  Timestamp                = {2016.08.24}
 }
 
 @Misc{braille,

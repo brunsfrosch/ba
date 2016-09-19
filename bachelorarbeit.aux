@@ -44,21 +44,52 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Suffix-Tree}{4}{subsection.2.2}}
 \@writefile{thm}{\contentsline {definition}{{Definition}{2.{6}}{Suffix-Tree}}{4}{theorem.2.6}}
 \citation{suffixtreeurl}
-\citation{managingGigabytes}
 \@writefile{thm}{\contentsline {beispiel}{{Beispiel}{2.{7}}{Suffix-Tree}}{5}{theorem.2.7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Diese Abbildung zeigt den Suffix-Tree zu $s$ = \texttt  {ananas\$}. Die Bl\IeC {\"a}tter sind hierbei nummeriert. Der String auf dem Pfad von der Wurzel zum Blatt $i$ repr\IeC {\"a}sentiert das Suffix $s[i..]$. Die roten Zahlen an den Knoten sind durch eine Pre-Order-Nummerierung entstanden und sind die IDs der Knoten. \relax }}{5}{figure.caption.3}}
 \newlabel{fig:suffixTree}{{2}{5}{Diese Abbildung zeigt den Suffix-Tree zu $s$ = \texttt {ananas\$}. Die Blätter sind hierbei nummeriert. Der String auf dem Pfad von der Wurzel zum Blatt $i$ repräsentiert das Suffix $s[i..]$. Die roten Zahlen an den Knoten sind durch eine Pre-Order-Nummerierung entstanden und sind die IDs der Knoten. \relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Idee der LZ78 Variante}{5}{section.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}LZ78}{5}{subsection.3.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Links sieht man die Faktorisierung nach LZ78 und rechts den entsprechenden LZ78-Tree. Der $i$-te Faktor $(x,s)$ wird zu einem neuen Knoten $i$ mit $x$ als Elternknoten und die Kante $(x,i)$ wird mit $s$ beschriftet.\relax }}{6}{figure.caption.4}}
-\newlabel{fig:lz78}{{3}{6}{Links sieht man die Faktorisierung nach LZ78 und rechts den entsprechenden LZ78-Tree. Der $i$-te Faktor $(x,s)$ wird zu einem neuen Knoten $i$ mit $x$ als Elternknoten und die Kante $(x,i)$ wird mit $s$ beschriftet.\relax }{figure.caption.4}{}}
-\@writefile{thm}{\contentsline {definition}{{Definition}{3.{1}}{Faktor (LZ78)}}{6}{theorem.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}LZ78 Variante}{6}{subsection.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Links sieht man die Faktorisierung nach LZ78V und rechts den entsprechenden LZ78V-Tree. Der $i$-te Faktor $(x,s)$ wird zu einem neuen Knoten $i$ mit $x$ als Elternknoten und die Kante $(x,i)$ wird mit $s$ beschriftet. Im Gegensatz zum LZ78-Tree kann $s$ aber mehr als ein Zeichen beinhalten.\relax }}{6}{figure.caption.5}}
-\newlabel{fig:lz78v}{{4}{6}{Links sieht man die Faktorisierung nach LZ78V und rechts den entsprechenden LZ78V-Tree. Der $i$-te Faktor $(x,s)$ wird zu einem neuen Knoten $i$ mit $x$ als Elternknoten und die Kante $(x,i)$ wird mit $s$ beschriftet. Im Gegensatz zum LZ78-Tree kann $s$ aber mehr als ein Zeichen beinhalten.\relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Min-Heap}{5}{subsection.2.3}}
+\@writefile{thm}{\contentsline {definition}{{Definition}{2.{8}}{Heap-Eigenschaft}}{5}{theorem.2.8}}
+\citation{introductionToAlgorithms}
+\citation{bellTextCompression}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Beispiel eines \textit  {Min-Heaps} $(\mathbb  {N}, \geq )$.\relax }}{6}{figure.caption.4}}
+\newlabel{fig:min_heap_example}{{3}{6}{Beispiel eines \textit {Min-Heaps} $(\mathbb {N}, \geq )$.\relax }{figure.caption.4}{}}
+\newlabel{heap_array_prop_1}{{2.3}{6}{Min-Heap}{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Array-Darstellung des Baums aus Abbildung \ref  {fig:min_heap_example}.\relax }}{6}{figure.caption.5}}
+\newlabel{fig:array_heap}{{4}{6}{Array-Darstellung des Baums aus Abbildung \ref {fig:min_heap_example}.\relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Idee der LZ78 Variante}{6}{section.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}LZ78}{6}{subsection.3.1}}
+\newlabel{lz78_sec}{{3.1}{6}{LZ78}{subsection.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Links sieht man die Faktorisierung nach LZ78 und rechts den entsprechenden LZ78-Tree. Der $i$-te Faktor $(x,s)$ wird zu einem neuen Knoten $i$ mit $x$ als Elternknoten und die Kante $(x,i)$ wird mit $s$ beschriftet.\relax }}{7}{figure.caption.6}}
+\newlabel{fig:lz78}{{5}{7}{Links sieht man die Faktorisierung nach LZ78 und rechts den entsprechenden LZ78-Tree. Der $i$-te Faktor $(x,s)$ wird zu einem neuen Knoten $i$ mit $x$ als Elternknoten und die Kante $(x,i)$ wird mit $s$ beschriftet.\relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}LZ78 Variante}{7}{subsection.3.2}}
+\newlabel{LZ78 Variante}{{3.2}{7}{LZ78 Variante}{subsection.3.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Links sieht man die Faktorisierung nach LZ78V und rechts den entsprechenden LZ78V-Tree. Der $i$-te Faktor $(x,s)$ wird zu einem neuen Knoten $i$ mit $x$ als Elternknoten und die Kante $(x,i)$ wird mit $s$ beschriftet. Im Gegensatz zum LZ78-Tree kann $s$ aber mehr als ein Zeichen beinhalten.\relax }}{8}{figure.caption.7}}
+\newlabel{fig:lz78v}{{6}{8}{Links sieht man die Faktorisierung nach LZ78V und rechts den entsprechenden LZ78V-Tree. Der $i$-te Faktor $(x,s)$ wird zu einem neuen Knoten $i$ mit $x$ als Elternknoten und die Kante $(x,i)$ wird mit $s$ beschriftet. Im Gegensatz zum LZ78-Tree kann $s$ aber mehr als ein Zeichen beinhalten.\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Diese Abbildung zeigt den Suffix-Tree zu $s$ = \texttt  {kananas\$}. Die Bl\IeC {\"a}tter sind hierbei nummeriert. Der String auf dem Pfad von der Wurzel zum Blatt $i$ repr\IeC {\"a}sentiert das Suffix $s[i..]$. Die roten Zahlen an den Knoten sind durch eine Pre-Order-Nummerierung entstanden und sind die IDs der Knoten.\relax }}{9}{figure.caption.8}}
+\newlabel{fig:kananas}{{7}{9}{Diese Abbildung zeigt den Suffix-Tree zu $s$ = \texttt {kananas\$}. Die Blätter sind hierbei nummeriert. Der String auf dem Pfad von der Wurzel zum Blatt $i$ repräsentiert das Suffix $s[i..]$. Die roten Zahlen an den Knoten sind durch eine Pre-Order-Nummerierung entstanden und sind die IDs der Knoten.\relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Textkompression mit LZ78V}{9}{section.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Faktorisierung}{9}{subsection.4.1}}
+\citation{sdsl}
+\citation{sdsl}
+\citation{sdsl}
+\newlabel{line:child}{{4}{10}{Faktorisierung}{AlgoLine.1.4}{}}
+\newlabel{line:used}{{5}{10}{Faktorisierung}{AlgoLine.1.5}{}}
+\newlabel{line:onlyFirstSym}{{9}{10}{Faktorisierung}{AlgoLine.1.9}{}}
+\newlabel{line:textpos}{{13}{10}{Faktorisierung}{AlgoLine.1.13}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces LZ78V Faktorisierung mit Vektoren\relax }}{10}{algocf.1}}
+\newlabel{algo:factVec}{{1}{10}{Faktorisierung}{algocf.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}SDSL-lite}{10}{subsubsection.4.1.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Suffix-Tree Konstruktion}{10}{subsubsection.4.1.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Vektoren}{10}{subsubsection.4.1.3}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {4.1.3.1}Bit-Vektor used}{10}{paragraph.4.1.3.1}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {4.1.3.2}Int-Vektor factors}{11}{paragraph.4.1.3.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4}Abbruchbedingung}{11}{subsubsection.4.1.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.5}Faktoren erstellen}{11}{subsubsection.4.1.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Beispiel}{11}{subsection.4.2}}
 \bibdata{bibAngaben}
 \bibcite{bellTextCompression}{1}
 \bibcite{klappentelegraph}{2}
 \bibcite{braille}{3}
 \bibcite{suffixtreeurl}{4}
-\bibcite{managingGigabytes}{5}
+\bibcite{introductionToAlgorithms}{5}
+\bibcite{sdsl}{6}
