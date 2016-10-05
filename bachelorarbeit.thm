@@ -1,8 +1,9 @@
-\contentsline {definition}{{Definition}{2.{1}}{Länge}}{4}{theorem.2.1}
-\contentsline {definition}{{Definition}{2.{2}}{Leerstring}}{4}{theorem.2.2}
-\contentsline {definition}{{Definition}{2.{3}}{Symbolzugriff}}{4}{theorem.2.3}
-\contentsline {definition}{{Definition}{2.{4}}{Teilstring}}{4}{theorem.2.4}
-\contentsline {definition}{{Definition}{2.{5}}{Suffix}}{4}{theorem.2.5}
-\contentsline {definition}{{Definition}{2.{6}}{Suffix-Tree}}{4}{theorem.2.6}
-\contentsline {beispiel}{{Beispiel}{2.{7}}{Suffix-Tree}}{5}{theorem.2.7}
-\contentsline {definition}{{Definition}{2.{8}}{Heap-Eigenschaft}}{5}{theorem.2.8}
+\contentsline {definition}{{Definition}{2.{1}}{Länge}}{5}{theorem.2.1}
+\contentsline {definition}{{Definition}{2.{2}}{Leerstring}}{5}{theorem.2.2}
+\contentsline {definition}{{Definition}{2.{3}}{Symbolzugriff}}{5}{theorem.2.3}
+\contentsline {definition}{{Definition}{2.{4}}{Teilstring}}{5}{theorem.2.4}
+\contentsline {definition}{{Definition}{2.{5}}{Suffix}}{5}{theorem.2.5}
+\contentsline {definition}{{Definition}{2.{6}}{Suffix-Tree}}{5}{theorem.2.6}
+\contentsline {beispiel}{{Beispiel}{2.{7}}{Suffix-Tree}}{6}{theorem.2.7}
+\contentsline {beweis}{{Beweis}{1}{}}{13}{beweis.1}
+\contentsline {definition}{{Definition}{5.{1}}{Heap-Eigenschaft}}{16}{theorem.5.1}

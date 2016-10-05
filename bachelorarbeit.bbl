@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{bellTextCompression}
 Timothy~C. Bell, John~G. Cleary, and Ian~H. Witten.
@@ -22,15 +22,47 @@ Visualisierung von {S}uffix - {T}rees.
 \newblock http://visualgo.net/suffixtree.html.
 \newblock abgerufen am: 01.08.2016.
 
-\bibitem{introductionToAlgorithms}
-Thomas~H. Cormen, Charles~E. Leiserson, Ronald~L. Rivest, and Clifford Stein.
-\newblock {\em Introduction to Algorithms, Third Edition}.
-\newblock The MIT Press, 3rd edition, 2009.
+\bibitem{lempelziv78}
+J.~Ziv and A.~Lempel.
+\newblock Compression of individual sequences via variable-rate coding.
+\newblock {\em IEEE Trans. Inf. Theor.}, 24(5):530--536, September 2006.
+
+\bibitem{cics}
+Dominik K{\"{o}}ppl and Kunihiko Sadakane.
+\newblock Lempel ziv computation in compressed space {(LZ-CICS)}.
+\newblock {\em CoRR}, abs/1510.02882, 2015.
 
 \bibitem{sdsl}
 Simon Gog, Timo Beller, Alistair Moffat, and Matthias Petri.
 \newblock From theory to practice: Plug and play with succinct data structures.
 \newblock In {\em 13th International Symposium on Experimental Algorithms, (SEA
   2014)}, pages 326--337, 2014.
+
+\bibitem{munroTables}
+J.~Ian Munro.
+\newblock {\em Tables}, pages 37--42.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 1996.
+
+\bibitem{dataCompressionHeld}
+Gilbert Held and Thomas Marshall.
+\newblock {\em Data Compression; Techniques and Applications: Hardware and
+  Software Considerations}.
+\newblock John Wiley \& Sons, Inc., New York, NY, USA, 3rd edition, 1991.
+
+\bibitem{managingGigabytes}
+Ian~H. Witten, Alistair Moffat, and Timothy~C. Bell.
+\newblock {\em Managing Gigabytes: Compressing and Indexing Documents and
+  Images}.
+\newblock Van Nostrand Reinhold, New York, NY, USA, 1994.
+
+\bibitem{storerDataCompression}
+James~A. Storer.
+\newblock {\em Data Compression: Methods and Theory}.
+\newblock Computer Science Press, Inc., New York, NY, USA, 1988.
+
+\bibitem{introductionToAlgorithms}
+Thomas~H. Cormen, Charles~E. Leiserson, Ronald~L. Rivest, and Clifford Stein.
+\newblock {\em Introduction to Algorithms, Third Edition}.
+\newblock The MIT Press, 3rd edition, 2009.
 
 \end{thebibliography}

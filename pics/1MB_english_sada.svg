@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   style="font-family: sans-serif; font-size: 10pt;"
+   width="900"
+   height="450"
+   id="svg2"
+   inkscape:version="0.91 r"
+   sodipodi:docname="1MB_english_sada.svg">
+  <metadata
+     id="metadata264">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs262" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1680"
+     inkscape:window-height="998"
+     id="namedview260"
+     showgrid="false"
+     inkscape:zoom="0.64"
+     inkscape:cx="886.3244"
+     inkscape:cy="145.88724"
+     inkscape:window-x="1680"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <g
+     class="zoom"
+     transform="scale(1.0)"
+     id="g4">
+    <g
+       transform="translate(55,10)"
+       id="g6">
+      <g
+         class="bar"
+         transform="translate(0,0)"
+         id="g8">
+        <rect
+           class="mem"
+           x="0"
+           y="0"
+           width="36.44902215787795"
+           height="390"
+           fill="steelblue"
+           id="rect10" />
+        <line
+           class="memoff"
+           x1="0"
+           x2="36.44902215787795"
+           y1="390.0015400658386"
+           y2="390.0015400658386"
+           style="stroke: rgba(0, 0, 0, 0.25); stroke-width: 1; stroke-dasharray: 2, 2;"
+           id="line12" />
+      </g>
+      <g
+         class="bar"
+         transform="translate(36.44902215787795,0)"
+         id="g14">
+        <rect
+           class="mem"
+           x="0"
+           y="325.75761848610665"
+           width="594.2179471449955"
+           height="64.24238151389335"
+           fill="tomato"
+           id="rect16" />
+        <line
+           class="memoff"
+           x1="0"
+           x2="594.2179471449955"
+           y1="355.29803452347966"
+           y2="355.29803452347966"
+           style="stroke: rgba(0, 0, 0, 0.25); stroke-width: 1; stroke-dasharray: 2, 2;"
+           id="line18" />
+      </g>
+      <g
+         class="bar"
+         transform="translate(630.6669693028734,0)"
+         id="g20">
+        <rect
+           class="mem"
+           x="0"
+           y="260.4973849219753"
+           width="74.97985424385935"
+           height="129.5026150780247"
+           fill="orange"
+           id="rect22" />
+        <line
+           class="memoff"
+           x1="0"
+           x2="74.97985424385935"
+           y1="335.6037946586587"
+           y2="335.6037946586587"
+           style="stroke: rgba(0, 0, 0, 0.25); stroke-width: 1; stroke-dasharray: 2, 2;"
+           id="line24" />
+      </g>
+      <g
+         class="bar"
+         transform="translate(705.6468235467329,0)"
+         id="g26">
+        <rect
+           class="mem"
+           x="0"
+           y="270.0551462036799"
+           width="0.17348416067528769"
+           height="119.9448537963201"
+           fill="darkseagreen"
+           id="rect28" />
+        <line
+           class="memoff"
+           x1="0"
+           x2="0.17348416067528769"
+           y1="270.34383342324276"
+           y2="270.34383342324276"
+           style="stroke: rgba(0, 0, 0, 0.25); stroke-width: 1; stroke-dasharray: 2, 2;"
+           id="line30" />
+      </g>
+      <g
+         class="bar"
+         transform="translate(705.820307707408,0)"
+         id="g32">
+        <rect
+           class="mem"
+           x="0"
+           y="259.55616992849525"
+           width="1.1796922925919566"
+           height="130.44383007150475"
+           fill="slateblue"
+           id="rect34" />
+        <line
+           class="memoff"
+           x1="0"
+           x2="1.1796922925919566"
+           y1="270.3416172309385"
+           y2="270.3416172309385"
+           style="stroke: rgba(0, 0, 0, 0.25); stroke-width: 1; stroke-dasharray: 2, 2;"
+           id="line36" />
+      </g>
+      <g
+         class="legend"
+         transform="translate(712,0)"
+         id="g38">
+        <rect
+           fill="steelblue"
+           x="0"
+           y="0em"
+           width="1em"
+           height="1em"
+           id="rect40" />
+        <text
+           x="13.822021"
+           y="10.9375"
+           dy="0"
+           style="font-style:normal"
+           id="text42">init compress</text>
+      </g>
+      <g
+         class="legend"
+         transform="translate(712,0)"
+         id="g44">
+        <rect
+           fill="tomato"
+           x="0"
+           y="1.5em"
+           width="1em"
+           height="1em"
+           id="rect46" />
+        <text
+           x="14.713135"
+           y="30.273438"
+           dy="0"
+           style="font-style:normal"
+           id="text48">factorisation</text>
+      </g>
+      <g
+         class="legend"
+         transform="translate(712,0)"
+         id="g50">
+        <rect
+           fill="orange"
+           x="0"
+           y="3em"
+           width="1em"
+           height="1em"
+           id="rect52" />
+        <text
+           x="14.713135"
+           y="48.632812"
+           dy="0"
+           style="font-style:normal"
+           id="text54">fill A_1 and A_2</text>
+      </g>
+      <g
+         class="legend"
+         transform="translate(712,0)"
+         id="g56">
+        <rect
+           fill="darkseagreen"
+           x="0"
+           y="4.5em"
+           width="1em"
+           height="1em"
+           id="rect58" />
+        <text
+           x="14.664307"
+           y="67.139122"
+           dy="0"
+           style="font-style:italic"
+           id="text60">Huffman Encoding</text>
+      </g>
+      <g
+         class="legend"
+         transform="translate(712,0)"
+         id="g62">
+        <rect
+           fill="slateblue"
+           x="0"
+           y="6em"
+           width="1em"
+           height="1em"
+           id="rect64" />
+        <text
+           x="13.867188"
+           y="85.742188"
+           dy="0"
+           style="font-style:normal"
+           id="text66">Output</text>
+      </g>
+      <g
+         class="axis"
+         transform="translate(0,390)"
+         id="g68">
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(0,0)"
+           id="g70">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line72" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text74">0</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(34.69683213505754,0)"
+           id="g76">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line78" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text80">2</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(69.39366427011508,0)"
+           id="g82">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line84" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text86">4</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(104.09049640517263,0)"
+           id="g88">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line90" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text92">6</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(138.78732854023016,0)"
+           id="g94">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line96" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text98">8</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(173.4841606752877,0)"
+           id="g100">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line102" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text104">10</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(208.18099281034526,0)"
+           id="g106">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line108" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text110">12</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(242.8778249454028,0)"
+           id="g112">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line114" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text116">14</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(277.5746570804603,0)"
+           id="g118">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line120" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text122">16</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(312.2714892155179,0)"
+           id="g124">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line126" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text128">18</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(346.9683213505754,0)"
+           id="g130">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line132" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text134">20</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(381.6651534856329,0)"
+           id="g136">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line138" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text140">22</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(416.3619856206905,0)"
+           id="g142">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line144" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text146">24</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(451.05881775574807,0)"
+           id="g148">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line150" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text152">26</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(485.7556498908056,0)"
+           id="g154">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line156" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text158">28</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(520.4524820258631,0)"
+           id="g160">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line162" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text164">30</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(555.1493141609207,0)"
+           id="g166">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line168" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text170">32</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(589.8461462959782,0)"
+           id="g172">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line174" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text176">34</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(624.5429784310357,0)"
+           id="g178">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line180" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text182">36</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(659.2398105660933,0)"
+           id="g184">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line186" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text188">38</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(693.9366427011508,0)"
+           id="g190">
+          <line
+             y2="6"
+             x2="0"
+             style="stroke: black;"
+             id="line192" />
+          <text
+             dy=".71em"
+             style="text-anchor: middle;"
+             y="9"
+             x="0"
+             id="text194">40</text>
+        </g>
+        <path
+           class="domain"
+           d="M0,6V0H707V6"
+           style="fill: none; stroke: black; shape-rendering: crispedges;"
+           id="path196" />
+      </g>
+      <text
+         class="axis-label"
+         transform="translate(353.5,390)"
+         dy="3em"
+         style="font-weight: bold; font-style: italic; text-anchor: middle;"
+         id="text198">Time / s</text>
+      <g
+         class="axis"
+         id="g200">
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(0,390)"
+           id="g202">
+          <line
+             x2="-6"
+             y2="0"
+             style="stroke: black;"
+             id="line204" />
+          <text
+             dy=".32em"
+             style="text-anchor: end;"
+             x="-9"
+             y="0"
+             id="text206">0</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(0,340.7659732710449)"
+           id="g208">
+          <line
+             x2="-6"
+             y2="0"
+             style="stroke: black;"
+             id="line210" />
+          <text
+             dy=".32em"
+             style="text-anchor: end;"
+             x="-9"
+             y="0"
+             id="text212">5</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(0,291.5319465420899)"
+           id="g214">
+          <line
+             x2="-6"
+             y2="0"
+             style="stroke: black;"
+             id="line216" />
+          <text
+             dy=".32em"
+             style="text-anchor: end;"
+             x="-9"
+             y="0"
+             id="text218">10</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(0,242.29791981313483)"
+           id="g220">
+          <line
+             x2="-6"
+             y2="0"
+             style="stroke: black;"
+             id="line222" />
+          <text
+             dy=".32em"
+             style="text-anchor: end;"
+             x="-9"
+             y="0"
+             id="text224">15</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(0,193.06389308417977)"
+           id="g226">
+          <line
+             x2="-6"
+             y2="0"
+             style="stroke: black;"
+             id="line228" />
+          <text
+             dy=".32em"
+             style="text-anchor: end;"
+             x="-9"
+             y="0"
+             id="text230">20</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(0,143.8298663552247)"
+           id="g232">
+          <line
+             x2="-6"
+             y2="0"
+             style="stroke: black;"
+             id="line234" />
+          <text
+             dy=".32em"
+             style="text-anchor: end;"
+             x="-9"
+             y="0"
+             id="text236">25</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(0,94.59583962626965)"
+           id="g238">
+          <line
+             x2="-6"
+             y2="0"
+             style="stroke: black;"
+             id="line240" />
+          <text
+             dy=".32em"
+             style="text-anchor: end;"
+             x="-9"
+             y="0"
+             id="text242">30</text>
+        </g>
+        <g
+           class="tick"
+           style="opacity: 1;"
+           transform="translate(0,45.361812897314586)"
+           id="g244">
+          <line
+             x2="-6"
+             y2="0"
+             style="stroke: black;"
+             id="line246" />
+          <text
+             dy=".32em"
+             style="text-anchor: end;"
+             x="-9"
+             y="0"
+             id="text248">35</text>
+        </g>
+        <path
+           class="domain"
+           d="M-6,0H0V390H-6"
+           style="fill: none; stroke: black; shape-rendering: crispedges;"
+           id="path250" />
+      </g>
+      <text
+         class="axis-label"
+         transform="translate(0,195) rotate(-90)"
+         dy="-3em"
+         style="font-weight: bold; font-style: italic; text-anchor: middle;"
+         id="text252">Memory Peak / MiB</text>
+      <g
+         class="marker"
+         transform="translate(37,0)"
+         style="display: none;"
+         id="g254">
+        <line
+           x1="0"
+           x2="0"
+           y1="0"
+           y2="390"
+           style="stroke: black; stroke-width: 1;"
+           id="line256" />
+        <circle
+           cx="0"
+           cy="325.75761848610665"
+           r="3"
+           style="fill: black;"
+           id="circle258" />
+      </g>
+    </g>
+  </g>
+</svg>
