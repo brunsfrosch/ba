@@ -23,6 +23,17 @@
   ISBN                     = {0262033844, 9780262033848}
 }
 
+@Misc{pizza,
+  Title                    = {Pizza \& chili corpus - compressed indexes and their testbeds.},
+
+  Author                   = {P. Ferragina and G. Navarro},
+  HowPublished             = {\url{http://pizzachili.dcc.uchile.cl/texts.html}},
+  Note                     = {Last update: Semptember, 2005},
+
+  Owner                    = {flo},
+  Timestamp                = {2016.10.07}
+}
+
 @InProceedings{sdsl,
   Title                    = {From Theory to Practice: Plug and Play with Succinct Data Structures},
   Author                   = {Gog, Simon and Beller, Timo and Moffat, Alistair and Petri, Matthias},
@@ -39,6 +50,18 @@
   Booktitle                = {In Poster Proceedings Volume of 4th Workshop on Efficient and Experimental Algorithms (WEA’05) (Greece},
   Year                     = {2005},
   Pages                    = {27--38}
+}
+
+@Book{dataCompressionHeld,
+  Title                    = {Data Compression; Techniques and Applications: Hardware and Software Considerations},
+  Author                   = {Held, Gilbert and Marshall, Thomas},
+  Publisher                = {John Wiley \& Sons, Inc.},
+  Year                     = {1991},
+
+  Address                  = {New York, NY, USA},
+  Edition                  = {3rd},
+
+  ISBN                     = {0471930091}
 }
 
 @Article{cics,
@@ -120,6 +143,14 @@
   Note                     = {abgerufen am: 24.08.2016},
 
   Timestamp                = {2016.08.24}
+}
+
+@Misc{gzip,
+  Title                    = {gzip},
+  HowPublished             = {\url{http://www.gzip.org/}},
+
+  Owner                    = {flo},
+  Timestamp                = {2016.10.07}
 }
 
 @Misc{klappentelegraph,

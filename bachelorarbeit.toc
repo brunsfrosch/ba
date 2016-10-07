@@ -36,3 +36,15 @@
 \contentsline {subsubsection}{\numberline {9.1.2}Durchf\IeC {\"u}hrung}{26}{subsubsection.9.1.2}
 \contentsline {subsubsection}{\numberline {9.1.3}Ergebnisse}{26}{subsubsection.9.1.3}
 \contentsline {subsubsection}{\numberline {9.1.4}Auswertung}{26}{subsubsection.9.1.4}
+\contentsline {subsection}{\numberline {9.2}rank-Struktur}{27}{subsection.9.2}
+\contentsline {subsubsection}{\numberline {9.2.1}Testumgebung}{27}{subsubsection.9.2.1}
+\contentsline {subsubsection}{\numberline {9.2.2}Durchf\IeC {\"u}hrung}{27}{subsubsection.9.2.2}
+\contentsline {subsubsection}{\numberline {9.2.3}Ergebnisse}{28}{subsubsection.9.2.3}
+\contentsline {subsubsection}{\numberline {9.2.4}Auswertung}{28}{subsubsection.9.2.4}
+\contentsline {section}{\numberline {10}Vergleiche}{29}{section.10}
+\contentsline {subsection}{\numberline {10.1}Testumgebung}{29}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Durchf\IeC {\"u}hrung}{29}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}Ergebnisse}{30}{subsection.10.3}
+\contentsline {subsubsection}{\numberline {10.3.1}Auswertung}{30}{subsubsection.10.3.1}
+\contentsline {section}{\numberline {11}Fazit}{31}{section.11}
+\contentsline {subsection}{\numberline {11.1}Ausblick}{31}{subsection.11.1}

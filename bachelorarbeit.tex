@@ -125,6 +125,8 @@
 \widowpenalty = 10000 \displaywidowpenalty = 10000
 % EOF
 
+\usepackage{tikz}
+\usepackage{pgfplots}
 
 \usepackage{hyperref}
 
@@ -962,7 +964,7 @@ Wir können mithilfe von TuDoComp Diagramme erzeugen, die Informationen über Sp
 	\item Text rekonstruieren
 \end{itemize}
 
-\subsection{Suffix-Trees}
+\subsection{Suffix-Trees}\label{test:suffix-tree}
 
 Zuerst Testen wir, welcher der drei Suffix-Tree Implementierungen (siehe Kapitel \ref{impl}) sich am Besten Für LZ78V eignet.
 
@@ -999,9 +1001,151 @@ Das gleiche Ergebnis erhalten wir bei den Tests mit einem englischen Text als Ei
 Die Tests mit beiden Implementierungen haben gezeigt, dass \textit{compress} mit \textit{cst\_sct3} als Suffix-Tree Implementierung besser ist als mit \textit{cst\_sada}. Es zeigt sich, dass der Speicherbedarf bei \textit{cst\_sct3} um ca. 33\% und die Laufzeit ca. 50\% in der Initialisierung geringer ist. Bei der Faktorisierung haben beide Implementierungen ungefähr den gleichen Speicherbedarf. Bei der Laufzeit allerdings ist \textit{cst\_sada} um ca. 40\% schlechter. 
 \newline
 Basierend auf diesen Ergebnissen verwenden wir in weiteren Tests und Vergleichen mit anderen Kompressionsverfahren als Suffix-Tree \textit{cst\_sct3}.
+\newline
+Für \textit{decompress} ist es unerheblich, welcher Suffix-Tree in \textit{compress} benutzt wurde, daher entfällt der Test der verschiedenen Implementierungen eines Suffix-Trees für \textit{decompress}.
 
+\subsection{rank-Struktur}
 
+\subsubsection{Testumgebung}
+
+Als Eingabetext $T$ benutzen wir verschiedene Texte der Größe 1MB. 
+
+\subsubsection{Durchführung}
+
+Wir faktorisieren den Eingabetext $T$ mit LZ78V und kodieren ihn anschließend mit der kanonischen Huffman-Kodierung. Dabei benutzen wir bei der Faktorisierung die in Kapitel \ref{impl} genannten Implementierungen von rank-Strukturen auf dem Bit-Vektor $used$. Außerdem benutzen wir für die Tests basierend auf \autoref{test:suffix-tree} den Suffix-Tree \textit{cst\_sct3}.
 \newpage
+\subsubsection{Ergebnisse}
+
+In Abbildungen \ref{fig:rank_dna} und \ref{fig:rank_english} sehen wir deutlich, dass die rank-Struktur Implementierung \textit{rank\_support\_scan} beim Füllen von $A_1$ und $A_2$ im Vergleich mit den beiden anderen Implementierungen die meiste Zeit benötigt. Wir können auch noch sehen, dass die rank-Struktur \textit{rank\_support\_v5} bei der Faktorisierung geringfügig länger braucht als \textit{rank\_support\_v}. 
+
+\begin{figure}[h]
+	\includegraphics[scale=0.27]{./pics/1MB_DNA_sct3}
+	\includegraphics[scale=0.27]{./pics/1MB_DNA_v5}
+	\includegraphics[scale=0.27]{./pics/1MB_DNA_scan}
+	\caption{Links oben sehen wir das Diagramm für den Test mit \textit{rank\_support\_v},rechts oben mit \textit{rank\_support\_v5} und unten links mit \textit{rank\_support\_scan}.\\ Eingabe: 1MB DNA-Sequenz}
+	\label{fig:rank_dna}
+\end{figure}
+
+
+\begin{figure}[h]
+	\includegraphics[scale=0.27]{./pics/1MB_english_sct3}
+	\includegraphics[scale=0.27]{./pics/1MB_english_v5}
+	\includegraphics[scale=0.27]{./pics/1MB_english_scan}
+	\caption{Links oben sehen wir das Diagramm für den Test mit \textit{rank\_support\_v},rechts oben mit \textit{rank\_support\_v5} und unten links mit \textit{rank\_support\_scan.\\ Eingabe: 1MB DNA-Sequenz}}
+	\label{fig:rank_english}
+\end{figure}
+
+\subsubsection{Auswertung}
+
+Beim Test dieser drei Implementierungen einer rank-Struktur auf einem Bitvektor haben gezeigt, dass \textit{rank\_support\_scan} für die Zwecke von LZ78V am schlechtesten ist. Die anderen beiden Implementierungen sind sowohl bei DNA-Sequenzen, als auch bei englischen Texten sehr ähnlich in Speicherverbrauch und Laufzeit sind. In den nachfolgenden Tests verwenden wir \textit{rank\_support\_v}, da wir hier einen geringfügigen Vorteil in der Laufzeit feststellen konnten.
+\newpage
+
+\section{Vergleiche}
+
+In diesem Kapitel vergleichen wir Kompressionen von LZ78V (kodiert mit der kanonischen Huffman-Kodierung) mit anderen Kompressionsverfahren.
+Vergleichkriterium dabei ist die Größe der mit dem entsprechenden Verfahren komprimierten Datei.
+
+\subsection{Testumgebung}
+
+Als Eingabetexte $T$ verwenden wir verschiedene Textdateien der Größe 50MB. Diese stammen aus der Textkollektion aus \cite{pizza}. Tabelle \ref{tbl:test_texts} zeigt die benutzen Textproblen und gibt Informationen über die Alphabetgrößen. Genauere Informationen zu den Texten sind \cite{pizza} zu entnehmen.
+
+\begin{table}[h] 
+	\begin{center}
+		\begin{tabular}{|r|c|}\hline
+			Text & Alphabetgröße  \\ \hline \hline
+			Englisch & 239 \\ \hline
+			DNA-Sequenz & 16 \\ \hline
+			Protein Sequenz & 16 \\ \hline
+			XML & 97 \\ \hline
+		\end{tabular}
+		\caption{Informationen über Testdaten für praktische Tests}
+		\label{tbl:test_texts}
+	\end{center}
+\end{table}
+
+\subsection{Durchführung}\label{vergleich_durch}
+
+Jeder in Tabelle \ref{tbl:test_texts} aufgeführte Text $T$ wird mit den folgenden Kompressionsverfahren komprimiert:
+
+\begin{itemize}
+	\item LZ78V
+	\item LZ78
+	\item LZW
+	\item gzip\cite{gzip}
+	\item 7zip\cite{7zip}
+\end{itemize}
+
+Wir benutzen die Implementierungen von LZ78 und LZW aus dem TuDoComp Framework.
+
+\subsection{Ergebnisse}
+
+Die Ergebnisse des Tests sehen wir in Abbildung \ref{test:vergleich}.
+
+
+\begin{figure}[h]
+\begin{tabular}{c c}
+
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}[
+ybar ,enlargelimits =0.15 ,
+symbolic x coords ={LZ78V, LZ78, LZW, GZIP, 7ZIP
+},xtick ={LZ78V, LZ78, LZW, GZIP, 7ZIP},
+]
+\addplot  coordinates
+{(LZ78V, 33.3) (LZ78, 21.9) (LZW, 17.9) (GZIP, 19.8) (7ZIP, 10.5)};
+\end{axis}
+\end{tikzpicture}   
+&
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}[
+ybar ,enlargelimits =0.15 ,
+symbolic x coords ={LZ78V, LZ78, LZW, GZIP, 7ZIP
+},xtick ={LZ78V, LZ78, LZW, GZIP, 7ZIP},
+]
+\addplot  coordinates
+{(LZ78V, 19.7) (LZ78, 16.4) (LZW, 13.1) (GZIP, 14.8) (7ZIP, 12.0)};
+\end{axis}
+\end{tikzpicture}  \\
+Eingabe: Englischer Text& Eingabe: DNA-Sequenz \\
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}[
+ybar ,enlargelimits =0.15 ,
+symbolic x coords ={LZ78V, LZ78, LZW, GZIP, 7ZIP
+},xtick ={LZ78V, LZ78, LZW, GZIP, 7ZIP},
+]
+\addplot  coordinates
+{(LZ78V, 37.9) (LZ78, 31.0) (LZW, 27.3) (GZIP, 24.9) (7ZIP, 18.2)};
+\end{axis}
+\end{tikzpicture}  
+&
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}[
+ybar ,enlargelimits =0.15 ,
+symbolic x coords ={LZ78V, LZ78, LZW, GZIP, 7ZIP
+},xtick ={LZ78V, LZ78, LZW, GZIP, 7ZIP},
+]
+\addplot  coordinates
+{(LZ78V, 17.0) (LZ78, 11.3) (LZW, 9.3) (GZIP, 9.7) (7ZIP, 6.0)};
+\end{axis}
+\end{tikzpicture}  \\
+Eingabe: Protein-Sequenz& Eingabe: XML \\
+\end{tabular}
+\caption{In dieser Abbildung sehen wir die Testergebnisse der Komressionen mit den Verfahren aus \autoref{vergleich_durch}. Auf der Y-Achse ist die Größe der komprimierten Datei in MB abgetragen, auf der X-Achse die Kompressionsverfahren.}
+\label{test:vergleich}
+\end{figure}
+
+\subsubsection{Auswertung}
+
+In diesem Kapitel werten wir die Ergebnisse aus dem Vergleichstest aus Kapitel \ref{tests} aus. Wir erkennen in Abbildung \ref{test:vergleich}, dass das entwickelte Verfahren LZ78V bei allen Tests ein schlechteres Ergebnis erzielt hat als die anderen getesteten Verfahren. Jedoch erreichen wir eine Kompression um bis zu 66\% (bei XML als Eingabetext).
+Wie wir die Kompression von LZ78V noch verbessern könnten sehen wir in Kapitel \ref{ausblick}.
+
+\section{Fazit}
+
+\subsection{Ausblick} \label{ausblick}
+
+
+
+
 \newpage
 \bibliography{bibAngaben}	
 
