@@ -124,11 +124,13 @@
 % Keine einzelnen Zeilen am Ende eines Abschnitts (Hurenkinder)
 \widowpenalty = 10000 \displaywidowpenalty = 10000
 % EOF
+\usepackage[utf8]{inputenc}
 
 \usepackage{tikz}
 \usepackage{pgfplots}
 
 \usepackage{hyperref}
+
 
 \begin{document}
 \include{titelseite}
@@ -1039,6 +1041,72 @@ In Abbildungen \ref{fig:rank_dna} und \ref{fig:rank_english} sehen wir deutlich,
 
 Beim Test dieser drei Implementierungen einer rank-Struktur auf einem Bitvektor haben gezeigt, dass \textit{rank\_support\_scan} für die Zwecke von LZ78V am schlechtesten ist. Die anderen beiden Implementierungen sind sowohl bei DNA-Sequenzen, als auch bei englischen Texten sehr ähnlich in Speicherverbrauch und Laufzeit sind. In den nachfolgenden Tests verwenden wir \textit{rank\_support\_v}, da wir hier einen geringfügigen Vorteil in der Laufzeit feststellen konnten.
 \newpage
+
+\subsection{Funktionstest}
+
+Bei einer verlustfreien Kompression muss bei Eingabe eines Textes $T$ gelten: \newline decompress(compress($T$)) = $T$. Dies wollen wir im Folgenden testen.
+
+\subsubsection{Testumgebung}\label{functiontest}
+
+Als Eingabetexte benutzen wir eine Vielzahl von Texten. Diese betrachten auch Randfälle, wie zum Beispiel die leere Eingabe.
+
+
+
+\begin{tabular}{p{0.4\textwidth}p{0.5\textwidth}}
+
+	\begin{itemize}
+		\item abcdebcdeabc
+		\item a
+		\item \texttt{leere Eingabe}
+		\item abcdebcdeabcd
+		\item foobar
+		\item abcabcabcabc
+		\item abc abc  abc
+		\item abaaabbababb		
+	\end{itemize}&
+
+	\begin{itemize}
+		\item \includegraphics{./pics/vietnam}
+		\item Lorem ipsum dolor sit amet, sea ut etiam solet salut
+		      andi, sint complectitur et his, ad salutandi imperdi
+		      et gubergren per mei.
+		\item \includegraphics{./pics/russian}
+		
+	\end{itemize} \\
+
+\end{tabular}
+
+
+
+	\begin{itemize}
+		\item \includegraphics{./pics/asian}
+		\item \includegraphics{./pics/kyril}
+		\item struct Foo \{ uint8\_t bar \}
+		\item ABBCBCABA
+		\item abcabca
+		\item abbbbbbbbbbcbbbbbbbbbb		
+	\end{itemize}
+
+\subsubsection{Durchführung}
+
+Für jeden Text $T$ aus der Liste aus \autoref{functiontest} testen wir, ob \newline \textit{decompress}(\textit{compress}($T$)) = $T$ gilt.
+Der Quellcode für diesen Test ist dem beiligenden Medium zu entnehmen.
+
+\subsubsection{Auswertung}
+
+Der Test war für jeden Text $T$ aus der Liste aus \autoref{functiontest} erfolgreich. Damit haben wir die Funktion erfolgreich getestet.
+
+
+	
+		
+		
+				 
+	 	
+ 		
+	
+
+
+
 
 \section{Vergleiche}
 
