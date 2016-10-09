@@ -49,6 +49,11 @@
 \contentsline {subsection}{\numberline {10.1}Testumgebung}{30}{subsection.10.1}
 \contentsline {subsection}{\numberline {10.2}Durchf\IeC {\"u}hrung}{30}{subsection.10.2}
 \contentsline {subsection}{\numberline {10.3}Ergebnisse}{31}{subsection.10.3}
-\contentsline {subsubsection}{\numberline {10.3.1}Auswertung}{31}{subsubsection.10.3.1}
-\contentsline {section}{\numberline {11}Fazit}{31}{section.11}
-\contentsline {subsection}{\numberline {11.1}Ausblick}{31}{subsection.11.1}
+\contentsline {subsubsection}{\numberline {10.3.1}Auswertung}{32}{subsubsection.10.3.1}
+\contentsline {section}{\numberline {11}Fazit}{32}{section.11}
+\contentsline {subsection}{\numberline {11.1}Bewertung}{32}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.2}Ausblick}{32}{subsection.11.2}
+\contentsline {subsubsection}{\numberline {11.2.1}child-Operation}{32}{subsubsection.11.2.1}
+\contentsline {subsubsection}{\numberline {11.2.2}LZ78V-Tree}{33}{subsubsection.11.2.2}
+\contentsline {subsubsection}{\numberline {11.2.3}Einzigartige Zeichen}{33}{subsubsection.11.2.3}
+\contentsline {subsubsection}{\numberline {11.2.4}Kodierung}{33}{subsubsection.11.2.4}

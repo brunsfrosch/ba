@@ -137,6 +137,14 @@
   Url                      = {http://dx.doi.org/10.1109/TIT.1978.1055934}
 }
 
+@Misc{7zip,
+  Title                    = {7-Zip},
+  HowPublished             = {\url{http://www.7-zip.de}},
+
+  Owner                    = {flo},
+  Timestamp                = {2016.10.07}
+}
+
 @Misc{braille,
   Title                    = {Braille-{A}phabeth},
   HowPublished             = {http://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/},

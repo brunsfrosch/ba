@@ -141,8 +141,9 @@
 \newpage
 
 \section{Einleitung}
-Die Datenkompression spielt in der Informatik eine große Rolle. Zwar sind die Datenträger im Vergleich zu früher um ein Vielfaches größer und vor allem günstiger geworden, stoßen bei den heute anfallenden riesigen Datenmengen aber immer noch an ihre Grenzen. Deshalb ist es sinnvoll die Daten mit geschickten Verfahren so zu komprimieren, dass sie später verlustfrei in den Ursprungszustand zurückübersetzt werden können.
+Die Datenkompression spielt in der Informatik eine große Rolle. Bei den heutzutage immer größer werdenden Datenmengen ist es sinnvoll die Größe dieser Daten zu reduzieren. Das senkt die Zeit bei der Übertragung und generell den Speicherbedarf dieser Daten. Dabei muss bei der Kompression gewährleistet sein, dass man die ursprünglichen Daten rekonstruieren kann.
 In dieser Arbeit soll es darum gehen, Texte mithilfe einer Variante des Lempel-Ziv78-Verfahrens in Faktoren zu zerlegen, zu kodieren und so verlustfrei zu komprimieren. Dieses Verfahren stützt sich auf der Eliminierung von Redundanzen, indem Teile des Textes durch Verweise auf vorher auftretende gleiche Teile ersetzt werden. Solche Verweise benötigen weniger Speicher als der Text, was so zu einer Kompression des kompletten Textes führt.
+Anreiz diese Variante zu entwickeln ist, dass die Umsetzung von LZ78 viele Hilfsstrukturen benötigt. Die Variante soll allerdings einfacher sein und ohne diese Menge an Hilfstrukturen auskommen. \\
 Das aus dieser Arbeit entstehende Verfahren wird anschließend mit bereits vorhandenen Kompressionsverfahren (z.B. gzip und 7zip) verglichen.\\\\
 
 \subsection{Anekdote}
@@ -152,7 +153,7 @@ Dieses Problem hat sich bis heute nicht geändert. Wie verringern wir die Datenm
 	\begin{figure}[h]
 	
 		\includegraphics[scale=0.25]{./pics/shuttercabin}\cite{klappentelegraph}
-		\hspace{25pt}
+		\hspace{25pt} 
 	 	\includegraphics[scale=0.17]{./pics/braille}\cite{braille}
 	 	\caption{Links sieht man einen Klappentelegraphen. Rechts das englische Braille-Alphabet. }
 	  	\label{fig:braille}
@@ -346,7 +347,7 @@ Der Algorithmus benutzt zwei Vektoren. Diese erstellen wir wieder mithilfe von S
 Der Bit-Vektor $used$ besteht aus $x$ Bits, die mit 0 initialisiert werden. Dieser Vektor gibt an, ob ein Knoten mit der ID $i$ schon als Faktor benutzt wird.
 Ist dies der Fall, so ist $used[i]=1$. Dieser Vektor benötigt $64*\lceil\dfrac{x}{64}+1\rceil$ Bits.\cite{sdsl}
 
-\subsubsection{Int-Vektor factors}
+\subsubsection{Int-Vektor factors}\label{vektor_factors}
 
 Der Int-Vektor $factors$ ist zu Beginn leer. Wir füllen ihn im Laufe der Faktorisierung mit IDs von Knoten aus dem Suffix-Tree.  
 
@@ -448,7 +449,7 @@ Der Int-Vektor $N$ hat $z$ Einträge. Dieser Vektor speichert für jede ID aus $
  
 
 
-\subsection{Füllen von $A_1$ und $A_2$}
+\subsection{Füllen von $A_1$ und $A_2$}\label{fill_arrays}
 
 $A_1$ füllen wir mit Referenzen auf Faktoren, $A_2$ mit Strings, die an den referenzierten Faktor angehangen werden. Beide Arrays haben die Länge $z$.
 Nun können wir mithilfe von $used$, $N$ und dem Suffix-Tree die Arrays $A_1$ und $A_2$ füllen. Dazu durchlaufen wir $used$ einmal von links nach rechts durch und verfahren mit jedem Eintrag an Position $j$, der als nicht benutzt markiert ist, wie folgt:\\
@@ -1097,17 +1098,6 @@ Der Quellcode für diesen Test ist dem beiligenden Medium zu entnehmen.
 Der Test war für jeden Text $T$ aus der Liste aus \autoref{functiontest} erfolgreich. Damit haben wir die Funktion erfolgreich getestet.
 
 
-	
-		
-		
-				 
-	 	
- 		
-	
-
-
-
-
 \section{Vergleiche}
 
 In diesem Kapitel vergleichen wir Kompressionen von LZ78V (kodiert mit der kanonischen Huffman-Kodierung) mit anderen Kompressionsverfahren.
@@ -1145,15 +1135,15 @@ Jeder in Tabelle \ref{tbl:test_texts} aufgeführte Text $T$ wird mit den folgend
 
 Wir benutzen die Implementierungen von LZ78 und LZW aus dem TuDoComp Framework.
 
-\subsection{Ergebnisse}
+\subsection{Ergebnisse}\label{vergleichResult}
 
-Die Ergebnisse des Tests sehen wir in Abbildung \ref{test:vergleich}.
+Die Ergebnisse der Tests sehen wir in Abbildung \ref{test:vergleich}.
 
 
 \begin{figure}[h]
 \begin{tabular}{c c}
 
-\begin{tikzpicture}[scale=0.7]
+\begin{tikzpicture}[scale=0.6]
 \begin{axis}[
 ybar ,enlargelimits =0.15 ,
 symbolic x coords ={LZ78V, LZ78, LZW, GZIP, 7ZIP
@@ -1164,7 +1154,7 @@ symbolic x coords ={LZ78V, LZ78, LZW, GZIP, 7ZIP
 \end{axis}
 \end{tikzpicture}   
 &
-\begin{tikzpicture}[scale=0.7]
+\begin{tikzpicture}[scale=0.6]
 \begin{axis}[
 ybar ,enlargelimits =0.15 ,
 symbolic x coords ={LZ78V, LZ78, LZW, GZIP, 7ZIP
@@ -1175,7 +1165,7 @@ symbolic x coords ={LZ78V, LZ78, LZW, GZIP, 7ZIP
 \end{axis}
 \end{tikzpicture}  \\
 Eingabe: Englischer Text& Eingabe: DNA-Sequenz \\
-\begin{tikzpicture}[scale=0.7]
+\begin{tikzpicture}[scale=0.6]
 \begin{axis}[
 ybar ,enlargelimits =0.15 ,
 symbolic x coords ={LZ78V, LZ78, LZW, GZIP, 7ZIP
@@ -1186,7 +1176,7 @@ symbolic x coords ={LZ78V, LZ78, LZW, GZIP, 7ZIP
 \end{axis}
 \end{tikzpicture}  
 &
-\begin{tikzpicture}[scale=0.7]
+\begin{tikzpicture}[scale=0.6]
 \begin{axis}[
 ybar ,enlargelimits =0.15 ,
 symbolic x coords ={LZ78V, LZ78, LZW, GZIP, 7ZIP
@@ -1209,12 +1199,39 @@ Wie wir die Kompression von LZ78V noch verbessern könnten sehen wir in Kapitel 
 
 \section{Fazit}
 
+In dieser Arbeit haben wir das Verfahren LZ78V zur Kompression von Texten entwickelt. Mit diesem haben wir diverse Tests zum Ermitteln, welche Datenstrukturen wir verwenden, und zum Funktionstest durchgeführt. Außerdem haben wir es mit anderen Kompressionsverfahren verglichen.
+
+\subsection{Bewertung}
+
+Wir haben bei Vergleichen (siehe \autoref{vergleichResult}) von LZ78V mit anderen Lempel-Ziv basierten Kompressionsverfahren und allgemein gebräuchlichen Kompressionsprogrammen, dass LZ78V am schlechtesten von allen getesteten Verfahren komprimiert.
+\newline
+\newline
+Wir müssen allerdings auch beachten, dass der zeitliche Rahmen für diese Arbeit begrenzt war. Deshalb blieb wenig Zeit das Verfahren zu optimieren, sowohl in der Laufzeit als auch Kompression. Berücksichtigen wir die Punkte aus \autoref{ausblick} könnten wir das Verfahren verbessern und zu einem besseren Ergebnis kommen.
+
 \subsection{Ausblick} \label{ausblick}
 
+Die nachfolgenden Punkte konnten wir aufgrund des begrenzten Zeitrahmens nicht testen. Diese bieten jedoch ein Ausbaupotenzial für LZ78V und können als Grundlage für Folgearbeiten dienen.
 
+\subsubsection{child-Operation}\label{child}
+
+Die \textit{child}-Operation, die wir im Suffix-Tree bei der Faktorisierung benutzen(siehe \autoref{factorisation}), gibt abhängig von einem Zeichen den Kindknoten eines Knotens zurück. Diese benötigt in der ausgewählten Suffix-Tree-Implementierung \textit{cst\_sct3} \newline $O((t_{SA}+t_{SA^{-1}}) * \log \sigma + t_{LCP})$ Zeit\cite{sdsl}. Es ist denkbar, die Operation anders zu implementieren, sodass sie weniger Zeit benötigt. Zum Beispiel könnte man in \textit{cst\_sct3} für jeden Knoten eine Map einführen, die Zeichen mit Knoten verknüpft. So erhält man bei entsprechender Implementierung der Map in $O(\log \sigma)$ den Kindknoten.
+
+\subsubsection{LZ78V-Tree}
+
+Anstatt die Faktoren durch den Vektor $factors$ darzustellen(siehe \autoref{factorisation} und Abschnitt \ref{vektor_factors}) und später sie später in die Arrays $A_1$ und $A_2$ zu überführen(siehe \autoref{fill_arrays}), könnte man den LZ78V-Tree direkt durch eine Baumimplementierung umsetzen. Bei der Faktorisierung müssen wir dann den gleichen Weg im LZ78V-Tree gehen, wie auch im Suffix-Tree. Kommen wir an eine Stelle, wo wir im LZ78V-Tree an einem Blatt angelangt sind, erstellen wir uns den entsprechenden Knoten und führen so einen neuen Faktor ein. Natürlich müssen wir hierbei auch die \textit{child}-Operation im Suffix-Tree, wie in Abschnitt \ref{child} verbessern.
+
+\subsubsection{Einzigartige Zeichen}
+
+Einzigartige Zeichen sind bei dem naiven Ansatz von LZ78V ein Problem(siehe \autoref{LZ78 Variante}). Wir lösen dieses Problem, indem wir den Text einer Kante nur komplett zu einem Faktor hinzufügen, wenn der aktuelle Knoten kein Blatt ist. Ansonsten nur das erste Zeichen. Es wäre hierbei aber auch denkbar, andere Kriterien zu betrachten. Wir könnten zum Beispiel eine Heuristik einführen, die abhängig von zum Faktor hinzugefügten Zeichen einen Wert berechnet. Dieser Wert gibt Auskunft darüber, wie viel Zeichen es sich lohnt zu einer Kante hinzuzufügen.
+
+\subsubsection{Kodierung}
+
+Wir haben die Faktorisierung bisher mit der kanonischen Huffman-Kodierung kodiert. Wir könnten jedoch sie jedoch auch mit anderen Kodierungen kodieren und testen, ob diese ein besseres Ergebnis liefern.
+
+\newpage
 
 
 \newpage
 \bibliography{bibAngaben}	
-
+\include{erklaerung}
 \end{document}
